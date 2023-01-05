@@ -69,7 +69,7 @@ def compute_bbox(start, end, fps, tube_bbox, frame_shape, inp, image_shape, incr
 
     scale = f'{image_shape[0]}:{image_shape[1]}'
 
-    return (f'ffmpeg -i {inp} -ss {start} -t {time} -c:v libx264 -crf 17 -c:a copy '
+    return (f'ffmpeg -i {inp} -ss {start} -t {time} -vcodec libx265 -crf 17 -c:a copy '
             f'-filter:v "crop={w}:{h}:{left}:{top}, scale={scale}" '
             f'-y scene/narration/face_cropped.mp4')
 
