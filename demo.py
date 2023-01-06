@@ -160,7 +160,7 @@ if __name__ == "__main__":
 
     opt = parser.parse_args()
 
-    depth_encoder = depth.ResnetEncoder(18, False)
+    depth_encoder = depth.ResnetEncoder(50, False)
     depth_decoder = depth.DepthDecoder(num_ch_enc=depth_encoder.num_ch_enc, scales=range(4))
     loaded_dict_enc = torch.load('ckpt/encoder.pth')
     loaded_dict_dec = torch.load('ckpt/depth.pth')
